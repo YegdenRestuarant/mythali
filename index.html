@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yegden Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button id="home-button" onclick="showHomeView()">HOME</button>
+        <h1 id="restaurant-name">YEGDEN RESTAURANT</h1>
+        <button id="owner-button" onclick="toggleOwnerPassword()">OWNER</button>
+    </header>
+    <div id="owner-password">
+        <input type="password" id="password-input" placeholder="Enter password">
+        <button onclick="validatePassword()">Submit</button>
+    </div>
+    <div id="home-view">
+        <div id="menu-items" class="menu-container"></div>
+        <div id="order-summary-container">
+            <h2>Order Summary</h2>
+            <div id="order-summary"></div>
+            <p>Total Amount: Nu. <span id="total-amount">0</span></p>
+            <button onclick="showTiming()">Proceed to Timing</button>
+        </div>
+    </div>
+    <div id="owner-view">
+        <div id="owner-menu-items" class="menu-container"></div>
+        <input type="text" id="food-name" placeholder="Food Name">
+        <input type="number" id="food-price" placeholder="Price">
+        <input type="file" id="food-image" accept="image/*">
+        <button onclick="addMenuItem()">Add Item</button>
+    </div>
+    <div id="timing">
+        <h2>Select Arrival Timing</h2>
+        <label for="arrival-date">Date:</label>
+        <input type="date" id="arrival-date">
+        <label for="arrival-time">Time:</label>
+        <input type="time" id="arrival-time">
+        <button onclick="showPaymentOptions()">Proceed to Payment</button>
+    </div>
+    <div id="payment">
+        <h2>Payment</h2>
+        <label for="bank">Select Bank:</label>
+        <select id="bank" onchange="showAccountNumberInput()">
+            <option value="">Select</option>
+            <option value="BOB">Bank of Bhutan (BOB)</option>
+            <option value="BNB">Bhutan National Bank (BNB)</option>
+        </select>
+        <div id="customer-account-number" style="display:none;">
+            <label for="account-number">Account Number:</label>
+            <input type="text" id="account-number">
+        </div>
+        <button onclick="checkout()">Pay</button>
+    </div>
+    <div id="receipt">
+        <h2>Receipt</h2>
+        <p>Journal Number: <span id="journal-number"></span></p>
+        <p>Date: <span id="receipt-date"></span></p>
+        <p>Time: <span id="receipt-time"></span></p>
+        <div id="receipt-order-summary"></div>
+        <p>Total Amount: Nu. <span id="receipt-total"></span></p>
+        <button onclick="resetApp()">Back to Home</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

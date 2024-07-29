@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+#restaurant-name {
+    margin: 0;
+    font-size: 24px;
+}
+
+#home-button, #owner-button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#owner-password, #home-view, #owner-view, #timing, #payment, #receipt {
+    display: none;
+    padding: 20px;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item, .owner-menu-item {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    width: 200px;
+}
+
+.menu-item img, .owner-menu-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+#order-summary-container {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+input[type="file"] {
+    display: block;
+    margin-top: 10px;
+}
